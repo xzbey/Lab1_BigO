@@ -18,5 +18,13 @@
     <ClCompile Include="Lab1_BigO.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="ZalyubivskiyBS_LR_1_sort_BigO.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ZalyubivskiyBS_LR_1_sort_BigO.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
