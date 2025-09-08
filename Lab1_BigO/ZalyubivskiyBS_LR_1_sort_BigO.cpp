@@ -43,16 +43,8 @@ std::pair<int, double> ZalyubivskiyBS_LR_1_sort_BigO::Task1() const { // O(n) -5
 }
 
 
-void ZalyubivskiyBS_LR_1_sort_BigO::test()  {
-    std::cout << "Enter size of array: ";
-    size_t size;
-    std::cin >> size;
-
-    int min, max;
-    std::cout << "Enter min and max numbers to fill array: ";
-    std::cin >> min >> max;
-
-
+void ZalyubivskiyBS_LR_1_sort_BigO::test(size_t size, int min, int max)  {
+    
     fill(size, min, max);
     //print();
 

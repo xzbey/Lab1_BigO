@@ -19,9 +19,9 @@ public:
 	void fill(size_t size, int min, int max);
 
 
-	std::pair<int, double> Task1() const; // O(n)		-5 вариант-
+	std::pair<int, double> Task1() const;						// O(n)
 
-	void test();
+	void test(size_t size = 0, int min = 0, int max = 1000000);
 };
 
 

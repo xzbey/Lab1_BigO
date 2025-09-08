@@ -124,9 +124,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Lab1_BigO.cpp" />
+    <ClCompile Include="ZalyubivskiyBS_LR1_Task2_compare_complexity.cpp" />
     <ClCompile Include="ZalyubivskiyBS_LR_1_sort_BigO.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ZalyubivskiyBS_LR1_Task2_compare_complexity.h" />
     <ClInclude Include="ZalyubivskiyBS_LR_1_sort_BigO.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
