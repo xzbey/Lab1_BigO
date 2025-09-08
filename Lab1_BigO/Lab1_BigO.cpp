@@ -1,6 +1,6 @@
 ﻿//#define TASK1
 //#define TASK2
-//#define TASK3
+#define TASK3
 
 #ifdef TASK1
 #include "ZalyubivskiyBS_LR_1_sort_BigO.h"
@@ -8,6 +8,10 @@
 #ifdef TASK2
 #include "ZalyubivskiyBS_LR1_Task2_compare_complexity.h"
 #endif
+#ifdef TASK3
+#include "ZalyubivskiyBS_LR1_Task3_optimization.h"
+#endif
+
 
 #include <ctime>
 
@@ -75,13 +79,13 @@ struct Task2 {
 			}
 
 		else {
-			task.test(10, 1, 10, 0, 10);
-			task.test(1000, 1, 1000, 0, 1000);
-			task.test(10000, 1, 100000);
+			task.test(1000, 1, 10, 0, 10);
+			task.test(10000, 1, 1000, 0, 1000);
+			task.test(100000, 1, 100000);
 			std::cout << '\n';
-			task.test(10, 0, 10, 0, 10);
-			task.test(1000, 0, 1000, 0, 1000);
-			task.test(10000, 0, 100000);
+			task.test(1000, 0, 10, 0, 10);
+			task.test(10000, 0, 1000, 0, 1000);
+			task.test(100000, 0, 100000);
 		}
 
 	}
@@ -92,8 +96,40 @@ struct Task2 {
 #ifdef TASK3
 struct Task3 {
 	void run() {
+		ZalyubivskiyBS_LR1_Task3_optimization task;
 
+		if (0)                                          // Ввод данных пользователя
+			while (1) {
+				std::cout << '\n' << '\n';
+				size_t size; int min, max; bool typeFind;
+
+				std::cout << "Enter size of array: ";
+				std::cin >> size;
+
+				std::cout << "Enter min and max numbers to fill array: ";
+				std::cin >> min >> max;
+
+				std::cout << "Enter find-type / 0(basic enum) or 1(sort array + get last element) / : ";
+				std::cin >> typeFind;
+
+				task.test(typeFind, size, min, max);
+
+				std::cout << "\nPrint array? / 0(No) or 1(Yes) / : ";
+				bool b;
+				std::cin >> b;
+				if (b) task.print();
+			}
+		else {                                          // Тест с разными размерами | min, max = [0, 10^6]
+			task.test(0, 1000);
+			task.test(0, 10000);
+			task.test(0, 100000);
+			std::cout << '\n';
+			task.test(1, 1000);
+			task.test(1, 10000);
+			task.test(1, 100000);
+		}
 	}
+	
 };
 #endif
 
