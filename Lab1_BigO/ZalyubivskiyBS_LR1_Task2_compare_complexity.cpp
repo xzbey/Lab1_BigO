@@ -91,9 +91,13 @@ void ZalyubivskiyBS_LR1_Task2_compare_complexity::test(int x, bool typeFind, siz
 
     MixedArray array;
     typeFind ? array = findPairWithSum_withAddons(x) : array = findPairWithSum_doubleCycle(x);
+    
+    std::cout << "Size of array: " << size
+        << "\nSum: " << x
+        << "\nNums: " << array.first << " and " << array.second << '\n';
 
-    if (!array.error)
-        std::cout << "nums: " << array.first << " and " << array.second << " | time = " << array.time << "ms\n";
-    else
-        std::cout << "error | time = " << array.time << "ms\n";
+    if (array.error)
+        std::cout << "error: sum with this nums not found\n";
+
+    std::cout << "Time: " << array.time << " ms\n";
 }

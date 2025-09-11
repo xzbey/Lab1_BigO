@@ -49,6 +49,8 @@ void ZalyubivskiyBS_LR_1_sort_BigO::test(size_t size, int min, int max)  {
     //print();
 
     std::pair<int, double> pair = Task1();
-    std::cout << "sum = " << pair.first << " | time = " << pair.second << " ms\n";
+    std::cout << "Size of array: " << size
+        << "\nArray sum: " << pair.first 
+        << "\nTime: " << pair.second << " ms\n";
 
 }

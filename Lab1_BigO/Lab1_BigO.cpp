@@ -1,5 +1,5 @@
-﻿//#define TASK1
-//#define TASK2
+﻿#define TASK1
+#define TASK2
 #define TASK3
 
 #ifdef TASK1
@@ -20,29 +20,16 @@ struct Task1 {
 	void run() {
 		ZalyubivskiyBS_LR_1_sort_BigO task;
 
-		if (0)                                          // Ввод данных пользователя
-			while (1) {
-				std::cout << '\n' << '\n';
-				size_t size; int min, max;
-
-				std::cout << "Enter size of array: ";
-				std::cin >> size;
-
-				std::cout << "Enter min and max numbers to fill array: ";
-				std::cin >> min >> max;
-
-				task.test(size, min, max);
-
-				std::cout << "\nPrint array? / 0(No) or 1(Yes) / : ";
-				bool b;
-				std::cin >> b;
-				if (b) task.print();
-			}
-		else {                                          // Тест с разными размерами | min, max = [0, 10^6]
-			task.test(10);
-			task.test(1000);
-			task.test(100000);
-		}
+		std::cout << "            <<< O(n) >>>\n\n";
+		
+		std::cout << "---------------------\n";
+		task.test(10);
+		std::cout << "---------------------\n";
+		task.test(1000);
+		std::cout << "---------------------\n";
+		task.test(100000);
+		std::cout << "---------------------\n";
+		
 	}
 };
 #endif
@@ -52,41 +39,29 @@ struct Task1 {
 struct Task2 {
 	void run() {
 		ZalyubivskiyBS_LR1_Task2_compare_complexity task;
+	
+		std::cout << "    <<<<< From double cycle >>>>>\n"
+			<< "            <<< O(n^2) >>>\n\n";
+		
+		std::cout << "---------------------\n";
+		task.test(1500, 1, 1000, 0, 1000);
+		std::cout << "---------------------\n";
+		task.test(15000, 1, 10000, 0, 10000);
+		std::cout << "---------------------\n";
+		task.test(50000, 1, 100000);
+		std::cout << "---------------------\n";
 
-		if (1)
-			while (1) {
-				std::cout << '\n' << '\n';
-				size_t size; int min, max, x; bool typeFind;
 
-				std::cout << "Enter size of array: ";
-				std::cin >> size;
-
-				std::cout << "Enter min and max numbers to fill array: ";
-				std::cin >> min >> max;
-
-				std::cout << "Enter sum X: ";
-				std::cin >> x;
-
-				std::cout << "Enter find-type / 0(double-cycle) or 1(with-addons) / : ";
-				std::cin >> typeFind;
-
-				task.test(x, typeFind, size, min, max);
-
-				std::cout << "\nPrint array? / 0(No) or 1(Yes) / : ";
-				bool b;
-				std::cin >> b;
-				if (b) task.print();
-			}
-
-		else {
-			task.test(1000, 1, 10, 0, 10);
-			task.test(10000, 1, 1000, 0, 1000);
-			task.test(100000, 1, 100000);
-			std::cout << '\n';
-			task.test(1000, 0, 10, 0, 10);
-			task.test(10000, 0, 1000, 0, 1000);
-			task.test(100000, 0, 100000);
-		}
+		std::cout << "\n\n    <<<<< With check addons >>>>>\n" 
+			<< "             <<< O(n) >>>\n\n";
+		
+		std::cout << "---------------------\n";
+		task.test(1500, 0, 1000, 0, 1000);
+		std::cout << "---------------------\n";
+		task.test(15000, 0, 10000, 0, 100000);
+		std::cout << "---------------------\n";
+		task.test(50000, 0, 100000);
+		std::cout << "---------------------\n";
 
 	}
 };
@@ -98,36 +73,29 @@ struct Task3 {
 	void run() {
 		ZalyubivskiyBS_LR1_Task3_optimization task;
 
-		if (0)                                          // Ввод данных пользователя
-			while (1) {
-				std::cout << '\n' << '\n';
-				size_t size; int min, max; bool typeFind;
+		std::cout << "    <<<<< Enum all nums from array >>>>>\n"
+			<< "                <<< O(n) >>>\n\n";
+		
+		std::cout << "---------------------\n";
+		task.test(0, 1000);
+		std::cout << "---------------------\n";
+		task.test(0, 10000);
+		std::cout << "---------------------\n";
+		task.test(0, 100000);
+		std::cout << "---------------------\n";
 
-				std::cout << "Enter size of array: ";
-				std::cin >> size;
 
-				std::cout << "Enter min and max numbers to fill array: ";
-				std::cin >> min >> max;
+		std::cout << "\n\n    <<<<< Sort array + get last element >>>>>\n"
+			<< "               <<< O(n*log n) >>>\n\n";
+		
+		std::cout << "---------------------\n";
+		task.test(1, 1000);
+		std::cout << "---------------------\n";
+		task.test(1, 10000);
+		std::cout << "---------------------\n";
+		task.test(1, 100000);
+		std::cout << "---------------------\n";
 
-				std::cout << "Enter find-type / 0(basic enum) or 1(sort array + get last element) / : ";
-				std::cin >> typeFind;
-
-				task.test(typeFind, size, min, max);
-
-				std::cout << "\nPrint array? / 0(No) or 1(Yes) / : ";
-				bool b;
-				std::cin >> b;
-				if (b) task.print();
-			}
-		else {                                          // Тест с разными размерами | min, max = [0, 10^6]
-			task.test(0, 1000);
-			task.test(0, 10000);
-			task.test(0, 100000);
-			std::cout << '\n';
-			task.test(1, 1000);
-			task.test(1, 10000);
-			task.test(1, 100000);
-		}
 	}
 	
 };
@@ -137,20 +105,26 @@ struct Task3 {
 int main() {
 	// 5 variant
 #if defined(TASK1) or defined(TASK2) or defined(TASK3)
-	srand(static_cast<unsigned>(time(nullptr)));        // сид для рандома
+	srand(static_cast<unsigned>(time(nullptr)));        // сид для рандома	
 #endif
 
 #ifdef TASK1
-	Task1 task;
-	task.run();
+	std::cout << "=============== Task1 ===============\n\n\n";
+	Task1 task1;
+	task1.run();
+	std::cout << "\n\n\n";
 #endif
 #ifdef TASK2
-	Task2 task;
-	task.run();
+	std::cout << "=============== Task2 ===============\n\n\n";
+	Task2 task2;
+	task2.run();
+	std::cout << "\n\n\n";
 #endif
 #ifdef TASK3
-	Task3 task;
-	task.run();
+	std::cout << "=============== Task3 ===============\n\n\n";
+	Task3 task3;
+	task3.run();
+	std::cout << "\n\n\n";
 #endif
 
 

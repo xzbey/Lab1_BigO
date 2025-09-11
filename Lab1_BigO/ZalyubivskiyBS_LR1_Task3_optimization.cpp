@@ -65,5 +65,7 @@ void ZalyubivskiyBS_LR1_Task3_optimization::test(bool typeFind, size_t size, int
 
     typeFind ? pair = findMax_sorted() : pair = findMax_enum();
 
-    std::cout << "max = " << pair.first << " | time = " << pair.second << " ms\n";
+    std::cout << "Size of array: " << size
+        << "\nMax num: " << pair.first
+        << "\nTime: " << pair.second << " ms\n";
 }
