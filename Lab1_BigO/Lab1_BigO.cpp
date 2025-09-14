@@ -23,9 +23,9 @@ struct Task1 {
 		std::cout << "            <<< O(n) >>>\n\n";
 		
 		std::cout << "---------------------\n";
-		task.test(10);
-		std::cout << "---------------------\n";
 		task.test(1000);
+		std::cout << "---------------------\n";
+		task.test(10000);
 		std::cout << "---------------------\n";
 		task.test(100000);
 		std::cout << "---------------------\n";
@@ -39,28 +39,13 @@ struct Task1 {
 struct Task2 {
 	void run() {
 		ZalyubivskiyBS_LR1_Task2_compare_complexity task;
-	
-		std::cout << "    <<<<< From double cycle >>>>>\n"
-			<< "            <<< O(n^2) >>>\n\n";
-		
-		std::cout << "---------------------\n";
-		task.test(1500, 1, 1000, 0, 1000);
-		std::cout << "---------------------\n";
-		task.test(15000, 1, 10000, 0, 10000);
-		std::cout << "---------------------\n";
-		task.test(50000, 1, 100000);
-		std::cout << "---------------------\n";
 
-
-		std::cout << "\n\n    <<<<< With check addons >>>>>\n" 
-			<< "             <<< O(n) >>>\n\n";
-		
 		std::cout << "---------------------\n";
-		task.test(1500, 0, 1000, 0, 1000);
+		task.test(1500, 1000, 0, 1000);
 		std::cout << "---------------------\n";
-		task.test(15000, 0, 10000, 0, 100000);
+		task.test(15000, 10000, 0, 10000);
 		std::cout << "---------------------\n";
-		task.test(50000, 0, 100000);
+		task.test(50000, 100000);
 		std::cout << "---------------------\n";
 
 	}
@@ -72,28 +57,13 @@ struct Task2 {
 struct Task3 {
 	void run() {
 		ZalyubivskiyBS_LR1_Task3_optimization task;
-
-		std::cout << "    <<<<< Enum all nums from array >>>>>\n"
-			<< "                <<< O(n) >>>\n\n";
 		
 		std::cout << "---------------------\n";
-		task.test(0, 1000);
+		task.test(1000);
 		std::cout << "---------------------\n";
-		task.test(0, 10000);
+		task.test(10000);
 		std::cout << "---------------------\n";
-		task.test(0, 100000);
-		std::cout << "---------------------\n";
-
-
-		std::cout << "\n\n    <<<<< Sort array + get last element >>>>>\n"
-			<< "               <<< O(n*log n) >>>\n\n";
-		
-		std::cout << "---------------------\n";
-		task.test(1, 1000);
-		std::cout << "---------------------\n";
-		task.test(1, 10000);
-		std::cout << "---------------------\n";
-		task.test(1, 100000);
+		task.test(100000);
 		std::cout << "---------------------\n";
 
 	}
@@ -129,4 +99,4 @@ int main() {
 
 
 
-}
+} 

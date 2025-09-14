@@ -58,14 +58,34 @@ std::pair<int, double> ZalyubivskiyBS_LR1_Task3_optimization::findMax_sorted() {
 }
 
 
-void ZalyubivskiyBS_LR1_Task3_optimization::test(bool typeFind, size_t size, int min, int max) {
+void ZalyubivskiyBS_LR1_Task3_optimization::test(size_t size, int min, int max) {
     fill(size, min, max);
 
-    std::pair<int, double> pair;
+    
 
-    typeFind ? pair = findMax_sorted() : pair = findMax_enum();
+    std::pair<int, double> pair_enum = findMax_enum();
+    std::pair<int, double> pair_sorted = findMax_sorted();
 
-    std::cout << "Size of array: " << size
-        << "\nMax num: " << pair.first
-        << "\nTime: " << pair.second << " ms\n";
+    if (pair_enum.first == pair_sorted.first)
+        std::cout << "\nSize of array: " << size
+        << "\nMax num: " << pair_enum.first << '\n';
+    else
+        std::cout << "\nError\nDifferent max nums\n";
+
+
+    double max_time = std::max(pair_enum.second, pair_sorted.second);
+    if (max_time == 0) 
+        max_time = 1;
+
+    int enum_hashes = max_time > 0 ? std::max(1, static_cast<int>(std::round(50 * pair_enum.second / max_time))) : 1;
+
+    int sorted_hashes = max_time > 0 ? std::max(1, static_cast<int>(std::round(50 * pair_sorted.second / max_time))) : 1;
+
+
+    std::cout << "\n<<<<< Enum all nums from array #O(n) >>>>>\n"
+        << "###   Time: " << pair_enum.second << " ms " << std::string(enum_hashes, '#') << '\n';
+
+    std::cout << "\n<<<<< Sort array + get last element #O(n*log n)>>>>>\n"
+        << "###   Time: " << pair_sorted.second << " ms " << std::string(sorted_hashes, '#') << '\n';
+
 }

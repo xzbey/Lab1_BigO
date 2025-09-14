@@ -21,19 +21,19 @@ public:
 		bool error;
 	};
 	
-	std::vector<int> GetArr() const;
+	std::vector<int> GetArr() const; // O(1)
 
 
-	void print() const;
+	void print() const; // O(n)
 
-	void fill(size_t size, int min, int max);
+	void fill(size_t size, int min, int max); // O(n)
 
 
-	MixedArray findPairWithSum_doubleCycle(int x) const;
+	MixedArray findPairWithSum_doubleCycle(int x) const; // O(n^2)
 
-	MixedArray findPairWithSum_withAddons(int x) const;
+	MixedArray findPairWithSum_withAddons(int x) const; // O(n)
 
 	
-	void test(int x, bool typeFind = 0, size_t size = 0, int min = 0, int max = 1000000);
+	void test(int x, size_t size = 0, int min = 0, int max = 1000000); // O(1)
 };
 

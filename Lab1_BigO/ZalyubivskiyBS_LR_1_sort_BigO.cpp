@@ -37,7 +37,7 @@ std::pair<int, double> ZalyubivskiyBS_LR_1_sort_BigO::Task1() const { // O(n) -5
         sum_ += i;
 
     auto end = std::chrono::high_resolution_clock::now();
-
+    
 
     return { sum_, std::chrono::duration<double, std::milli>(end - start).count() };
 }
@@ -54,3 +54,4 @@ void ZalyubivskiyBS_LR_1_sort_BigO::test(size_t size, int min, int max)  {
         << "\nTime: " << pair.second << " ms\n";
 
 }
+

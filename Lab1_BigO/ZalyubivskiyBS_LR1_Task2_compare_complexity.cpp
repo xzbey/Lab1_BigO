@@ -86,18 +86,30 @@ ZalyubivskiyBS_LR1_Task2_compare_complexity::findPairWithSum_withAddons(int x) c
 }
 
 
-void ZalyubivskiyBS_LR1_Task2_compare_complexity::test(int x, bool typeFind, size_t size, int min, int max) {
+void ZalyubivskiyBS_LR1_Task2_compare_complexity::test(int x, size_t size, int min, int max) {
     fill(size, min, max);
 
-    MixedArray array;
-    typeFind ? array = findPairWithSum_withAddons(x) : array = findPairWithSum_doubleCycle(x);
+    std::cout << "\nSize of array: " << size
+        << "\nSum: " << x << '\n';
+
+    MixedArray array = findPairWithSum_doubleCycle(x);
     
-    std::cout << "Size of array: " << size
-        << "\nSum: " << x
-        << "\nNums: " << array.first << " and " << array.second << '\n';
+    std::cout << "    \n<<<<< From double cycle #O(n^2) >>>>>\n"
+        << "###   Nums: " << array.first << " and " << array.second << '\n';
 
     if (array.error)
-        std::cout << "error: sum with this nums not found\n";
+        std::cout << "###  error: sum with this nums not found\n";
 
-    std::cout << "Time: " << array.time << " ms\n";
+    std::cout << "###   Time: " << array.time << " ms\n";
+
+
+
+    array = findPairWithSum_withAddons(x);
+    std::cout << "    \n<<<<< With check addons #O(n) >>>>>\n"
+        << "###   Nums: " << array.first << " and " << array.second << '\n';
+
+    if (array.error)
+        std::cout << "###  error: sum with this nums not found\n";
+
+    std::cout << "###   Time: " << array.time << " ms\n";
 }
